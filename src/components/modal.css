@@ -1,0 +1,73 @@
+
+modalBackground{
+    background-color: rgba(0,0,0,0.2);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+.modalContainer{
+    border: 1px solid gray;
+    border-radius: 4px;
+    width: 500px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 10px 10px 35px -3px rgba(0,0,0,0.42);
+    -moz-box-shadow: 10px 10px 35px -3px rgba(0,0,0,0.42);
+    box-shadow: 10px 10px 35px -3px rgba(0,0,0,0.42);
+}
+
+.headerModal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     margin-bottom: 0px;
+    height: 60px;
+    border-bottom: 1px solid gray;
+}
+
+.headerModal button{
+    border: none;
+    background-color: #fff;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 0px;
+}
+
+.modalContainer form {
+    border: 1px solid gray;
+    border-radius: 4px;
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px 40px 5px;
+    box-sizing: border-box;
+    position: relative;
+
+}
+
+.modalContainer form label{
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.modalContainer form input[type="text"]{
+ border-radius: 4px;
+ border:  1px solid gray;
+ padding: 6px 10px;
+ margin-bottom: 8px;
+}
+.modalContainer form input[type="submit"]{
+    background-color: green;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
