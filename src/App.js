@@ -1,20 +1,23 @@
 
-import './App.css';
-import Modal from './components/Modal.';
+import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import ModalAddProducts from './components/Modal';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
-   const [openModal, setOpenModal] = useState(false);
-    
+  const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div className='App'>
-    <button 
-    onClick={() => setOpenModal(true)} >Abrir Moral</button>
-    {openModal && <Modal 
-      closeModal ={setOpenModal}
-    />}
-    </div>
+    <>
+      <Button variant="primary" onClick={() => setModalShow(true)}>
+        Adicionar Produto
+      </Button>
+      <ModalAddProducts
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+
+    </>
   );
 }
 
