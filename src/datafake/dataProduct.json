@@ -1,0 +1,30 @@
+{
+    "products": [
+      {
+        "name": "Pizza Margherita",
+        "description": "Tomato sauce, mozzarella cheese, and fresh basil",
+        "price": 12.99
+      },
+      {
+        "name": "Spaghetti Bolognese",
+        "description": "Ground beef and pork in a rich tomato sauce served over spaghetti",
+        "price": 15.99
+      },
+      {
+        "name": "Chicken Fajitas",
+        "description": "Sizzling chicken strips with peppers and onions, served with warm tortillas",
+        "price": 18.99
+      },
+      {
+        "name": "Vegetable Stir Fry",
+        "description": "Assorted vegetables stir-fried in a savory sauce, served with rice",
+        "price": 14.99
+      },
+      {
+        "name": "BBQ Ribs",
+        "description": "Slow-cooked, fall-off-the-bone ribs in a tangy BBQ sauce",
+        "price": 19.99
+      }
+    ]
+  }
+  
