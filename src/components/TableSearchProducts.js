@@ -3,28 +3,19 @@ import dataInfoSearch from '../datafake/dataInfoSearch.json';
 import './tableSearchProducts.css'
 import dataProduct from '../datafake/dataProduct.json'
 
-function TableSearchProducts(props) {
-    const getProduct = dataProduct.products;
-    console.log(getProduct)
-    const searchProduct = getProduct.map((product, key)=>{
-        return
-            if(props.valueInput === product.name){
-                console.log('FUNCIONOU!')
-               
-            } else{
-                console.log('not works!')
-            }
-           
-        
-    })
+
+function TableSearchProducts({produtoBuscado, valueInput}) {
+    
+       
     const rowsData = dataInfoSearch.map((info, key) =>{
-        return (
-          <tr key={info.id}> 
-              <td>{info.Date}</td>
-              <td>{info.Name}</td>
-              <td>{info.Local}</td>
-          </tr>
-        )
+     return info.Name === valueInput ? (
+        <tr key={info.id}>
+          <td>{info.Date}</td>
+          <td>{info.Name}</td>
+          <td>{info.Local}</td>
+        </tr>
+      ) : null;
+        
           
       })
 

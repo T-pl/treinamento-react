@@ -4,11 +4,28 @@ import Form from 'react-bootstrap/Form';
 import './modal.css'
 import TableSearchProducts from './TableSearchProducts';
 import { useState } from 'react';
+import productsSearch from '../datafake/dataProduct.json'
 
 function ModalAddProducts(props) {
   const [valueInput, setInputValue] = useState('');
+  const [showTable, setShowTable] = useState(false);
+  
+ const nameSearch = productsSearch.products.map((item, id) =>{
+    return  item.name;    
+  });
+
+
+  const handleShowTable = () =>{
+   return setShowTable(true);
+  }
   const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+    const produtoBuscado =   event.target.value.toLowerCase();
+    const foundProduct = nameSearch.find(item => item === produtoBuscado);
+      if (foundProduct) {
+      return  setShowTable(true);
+   } else {
+    console.log('PRODUTO NÃO ENCONTRADO')
+   }
   };
   return (
     <Modal
@@ -38,10 +55,10 @@ function ModalAddProducts(props) {
             </Form.Group>
           </Form>
       <h2 className='titleResults'> RESULTADOS: </h2>
-      <TableSearchProducts valueInput ={valueInput} />
+     {showTable && <TableSearchProducts  nameSearch={nameSearch} valueInput={valueInput} />}
       </Modal.Body>
       <Modal.Footer >
-           <Button variant="success" className="btnSubmit" >BUSCAR</Button>
+           <Button variant="success" className="btnSubmit" onClick={handleShowTable} >BUSCAR</Button>
       </Modal.Footer>
     </Modal>
   );
