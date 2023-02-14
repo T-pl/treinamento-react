@@ -1,7 +1,7 @@
 
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
-import ModalAddProducts from './components/Modal';
+import ModalSearchProducts from './components/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
       <Button variant="primary" onClick={() => setModalShow(true)}>
         Adicionar Produto
       </Button>
-      <ModalAddProducts
+      <ModalSearchProducts
         show={modalShow}
         onHide={() => setModalShow(false)}
       />

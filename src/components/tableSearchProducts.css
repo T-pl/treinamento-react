@@ -1,13 +1,9 @@
-.titleColumn{
+.titleColumn {
     color: red;
     text-align: center;
-    
+
 }
-.tableInfo{
-    margin-right: 150px;
-    height: 100vh !important; 
-    overflow-y: scroll !important;
-}
-.tableBody{
+
+.tableBody {
     text-align: center !important;
 }
