@@ -4,26 +4,39 @@ import Form from 'react-bootstrap/Form';
 import './modal.css'
 import TableSearchProducts from './TableSearchProducts';
 import { useState } from 'react';
+import productsOnTable from '../datafake/dataInfoSearch.json'
 import products from '../datafake/dataProduct.json'
 
 function ModalSearchProducts(props) {
   const [valueInput, setInputValue] = useState('');
   const [showTable, setShowTable] = useState(false);
-  // const [foundProduct, setFoundProduct] = useState(null);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredTables, setFilteredTables] = useState([]);
 
-  const nameSearch = products.map((item) => {
-    return item.name.toLowerCase()
-  });
-  console.log(nameSearch);
+
+
+  // const handleFilteredTables = () => {
+  //   const filteredTables = productsOnTable.filter(table => {
+  //     const tableProductIds = productsOnTable.product_ids;
+  //     for (let i = 0; i < tableProductIds.length; i++) {
+  //       if (filteredProducts.find(product => product.product_id === tableProductIds[i])) {
+  //         return true;
+  //       }
+  //     }
+  //     return false;
+  //   });
+  //   setFilteredTables(filteredTables)
+  // }
+
+
   const handleShowTable = () => {
-    return setShowTable(true);
+    setShowTable(true);
   }
-
 
   const handleInputChange = (event) => {
-    const inputValue = event.target.value;
-    setInputValue(inputValue);
+    setInputValue(event.target.value.toLowerCase());
   }
+
 
   return (
     <Modal
@@ -53,7 +66,7 @@ function ModalSearchProducts(props) {
           </Form.Group>
         </Form>
         <h2 className='titleResults'> RESULTADOS: </h2>
-        {showTable && <TableSearchProducts />}
+        {showTable && <TableSearchProducts productName={valueInput} />}
       </Modal.Body>
       <Modal.Footer >
         <Button variant="success" className="btnSubmit" onClick={handleShowTable} >BUSCAR</Button>

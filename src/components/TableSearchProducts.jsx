@@ -1,12 +1,19 @@
 import Table from 'react-bootstrap/Table';
 import dataInfoSearch from '../datafake/dataInfoSearch.json';
 import './tableSearchProducts.css'
+import products from '../datafake/dataProduct.json'
 
-
-
-function TableSearchProducts() {
-
-
+function TableSearchProducts({ productName }) {
+  const produtoId = products.filter(product => {
+    const productFound = product.name.toLowerCase().includes(productName)
+    if (productFound) {
+      return console.log(product.product_id);
+    }
+    return true
+  });
+  if (produtoId.length === 0) {
+    return console.log('Não há produtos correspondentes');
+  }
   const rowsData = dataInfoSearch.map((info, table_id) => {
     return (
       <tr key={table_id}>
@@ -15,8 +22,6 @@ function TableSearchProducts() {
         <td>{info.table_id}</td>
       </tr>
     );
-
-
   })
 
   return (

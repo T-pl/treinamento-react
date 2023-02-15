@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Button variant="primary" onClick={() => setModalShow(true)}>
-        Adicionar Produto
+        Buscar Produto
       </Button>
       <ModalSearchProducts
         show={modalShow}
