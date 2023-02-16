@@ -4,25 +4,31 @@ import './tableSearchProducts.css'
 import products from '../datafake/dataProduct.json'
 
 function TableSearchProducts({ productName }) {
-  const produtoId = products.filter(product => {
-    const productFound = product.name.toLowerCase().includes(productName)
-    if (productFound) {
-      return console.log(product.product_id);
-    }
-    return true
-  });
-  if (produtoId.length === 0) {
-    return console.log('Não há produtos correspondentes');
+
+
+  const produtoId = products.find(product => {
+    return product.name.toLowerCase() === productName;
+  })?.product_id;
+  if (!produtoId) {
+    return <div style={{ color: 'red' }}>Produto não encontrato.</div>;
   }
-  const rowsData = dataInfoSearch.map((info, table_id) => {
-    return (
-      <tr key={table_id}>
-        <td>{info.date_time}</td>
-        <td>{info.server_name}</td>
-        <td>{info.table_id}</td>
-      </tr>
-    );
-  })
+
+  const productOnTable = dataInfoSearch.filter(mesa => {
+    return mesa.product_ids.includes(produtoId);
+  });
+
+  const rowsData = productOnTable.map((info, table_id) => {
+    if (info.product_ids.includes(produtoId)) {
+      return (
+        <tr key={table_id}>
+          <td>{info.date_time}</td>
+          <td>{info.server_name}</td>
+          <td>{info.table_id}</td>
+        </tr>
+      );
+    }
+    return null;
+  }).filter(row => row != null);
 
   return (
     <Table striped bordered hover>
