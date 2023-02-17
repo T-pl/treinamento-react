@@ -4,27 +4,27 @@
     "server_name": "John",
     "date_time": "14/02/2023 | 13:30:00",
     "location": "Main Dining Room",
-    "product_ids": [1, 2]
+    "product_ids": [1, 2, 7]
   },
   {
     "table_id": 2,
     "server_name": "Sarah",
     "date_time": "14/02/2023 | 13:30:00",
     "location": "Patio",
-    "product_ids": [3]
+    "product_ids": [3,5]
   },
   {
     "table_id": 3,
     "server_name": "Mike",
     "date_time": "14/02/2023 | 13:30:00",
     "location": "Private Room",
-    "product_ids": [2]
+    "product_ids": [2,6, 5]
   },
   {
     "table_id": 4,
     "server_name": "Emily",
     "date_time": "14/02/2023 | 13:30:00",
     "location": "Main Dining Room",
-    "product_ids": [4]
+    "product_ids": [4,3,7]
   }
 ]

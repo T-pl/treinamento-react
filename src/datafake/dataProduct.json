@@ -19,5 +19,21 @@
     "name": "Chicken Alfredo",
     "price": 15.99
   }
+  ,
+  {
+    "product_id": 5,
+    "name": "Pizza",
+    "price": 15.99
+  },
+  {
+    "product_id": 6,
+    "name": "Omelete",
+    "price": 15.99
+  },
+  {
+    "product_id": 7,
+    "name": "Coca Cola",
+    "price": 15.99
+  }
 ]
   

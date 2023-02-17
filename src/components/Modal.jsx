@@ -45,16 +45,19 @@ function ModalSearchProducts(props) {
           </Form.Group>
         </Form>
         <h2 className='titleResults'> RESULTADOS: </h2>
-        {showTable && <TableSearchProducts
+        {showTable ? <TableSearchProducts 
           productName={valueInput}
-          handleShowTable={handleShowTable} />}
+          handleShowTable={handleShowTable}
+          /> : null}
+          
       </Modal.Body>
       <Modal.Footer >
         <Button
+        title="Pressione Enter para buscar"
           variant="success"
           type="button"
           className="btnSubmit"
-          onSubmit={handleShowTable}>(ENT) BUSCAR</Button>
+          onClick={handleShowTable}>(ENT) BUSCAR</Button>
       </Modal.Footer>
     </Modal>
   );

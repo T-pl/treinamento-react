@@ -30,6 +30,7 @@ function TableSearchProducts({ productName }) {
     return null;
   }).filter(row => row != null);
 
+  
   return (
     <Table striped bordered hover>
       <thead>
@@ -41,6 +42,7 @@ function TableSearchProducts({ productName }) {
       </thead>
       <tbody className='tableBody'>
         {rowsData}
+        
       </tbody>
     </Table>
   )
