@@ -1,0 +1,10 @@
+.btnShowModal{
+    background: #f60e82 url('./assets/buscarProdutoIcone.png') !important ; 
+    background-repeat: no-repeat !important;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}

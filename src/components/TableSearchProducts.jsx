@@ -11,7 +11,8 @@ function TableSearchProducts({ productName }) {
   })?.product_id;
   if (!produtoId) {
     return <div style={{ color: 'red' }}>Produto não encontrato.</div>;
-  }
+    
+  } 
 
   const productOnTable = dataInfoSearch.filter(mesa => {
     return mesa.product_ids.includes(produtoId);
@@ -41,8 +42,7 @@ function TableSearchProducts({ productName }) {
         </tr>
       </thead>
       <tbody className='tableBody'>
-        {rowsData}
-        
+        {rowsData}  
       </tbody>
     </Table>
   )

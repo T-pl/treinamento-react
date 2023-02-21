@@ -1,5 +1,14 @@
 
-.btnClose, .btnSubmit{
+.btnSubmit{
     font-weight: bold !important;
 }
 
+.headerSection{
+    padding-right: 25px !important;
+}
+
+.headerSection #btnClose{
+
+    width: .005px !important;
+    height: .005px !important;
+}

@@ -2,6 +2,7 @@
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import ModalSearchProducts from './components/Modal';
+import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -9,8 +10,10 @@ function App() {
 
   return (
     <>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Buscar Produto
+      <Button className='btnShowModal' variant="primary" onClick={() => 
+      setModalShow(true)
+        }>
+      
       </Button>
       <ModalSearchProducts
         show={modalShow}

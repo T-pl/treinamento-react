@@ -1,6 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import CloseButton from 'react-bootstrap/CloseButton';
 import './modal.css'
 import TableSearchProducts from './TableSearchProducts';
 import { useState } from 'react';
@@ -8,9 +9,16 @@ import { useState } from 'react';
 function ModalSearchProducts(props) {
   const [valueInput, setInputValue] = useState('');
   const [showTable, setShowTable] = useState(false);
+  const [validated, setValidated] = useState(false);
 
-  const handleShowTable = () => {
-    setShowTable(true);
+  const handleShowTable = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+     setShowTable(true);
   }
 
   const handleInputChange = (event) => {
@@ -29,18 +37,20 @@ function ModalSearchProducts(props) {
         <Modal.Title id="contained-modal-title-vcenter">
           INFORME O PRODUTO
         </Modal.Title>
-        <Button variant='danger' className='btnClose' onClick={props.onHide}> (ESC) FECHAR</Button>
+        <CloseButton style={{width: '15px !important', height: '15px !important'}} aria-label="Hide" id='btnClose' onClick={props.onHide}/>
       </Modal.Header>
       <Modal.Body  >
-        <Form>
+        <Form noValidate validated={validated}>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
             <Form.Label>PRODUTO:</Form.Label>
             <Form.Control
+              required
               type="text"
               placeholder="Digite o Nome do Produto"
               autoFocus
               value={valueInput}
               onChange={handleInputChange}
+              
             />
           </Form.Group>
         </Form>
