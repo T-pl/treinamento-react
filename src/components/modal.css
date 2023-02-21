@@ -5,8 +5,11 @@
 
 .headerSection{
     padding-right: 25px !important;
+    border: none !important;
 }
-
+.footerSection{
+    border: none !important;
+}
 .headerSection #btnClose{
 
     width: .005px !important;

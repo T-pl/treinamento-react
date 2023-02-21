@@ -9,7 +9,8 @@ import { useState } from 'react';
 function ModalSearchProducts(props) {
   const [valueInput, setInputValue] = useState('');
   const [showTable, setShowTable] = useState(false);
-  const [validated, setValidated] = useState(false);
+  const [validated, setValidated] = useState(false)
+  
 
   const handleShowTable = (event) => {
     const form = event.currentTarget;
@@ -35,9 +36,10 @@ function ModalSearchProducts(props) {
     >
       <Modal.Header className='headerSection '>
         <Modal.Title id="contained-modal-title-vcenter">
-          INFORME O PRODUTO
+          <h3>INFORME O PRODUTO</h3>
         </Modal.Title>
         <CloseButton style={{width: '15px !important', height: '15px !important'}} aria-label="Hide" id='btnClose' onClick={props.onHide}/>
+        
       </Modal.Header>
       <Modal.Body  >
         <Form noValidate validated={validated}>
@@ -61,7 +63,7 @@ function ModalSearchProducts(props) {
           /> : null}
           
       </Modal.Body>
-      <Modal.Footer >
+      <Modal.Footer className='footerSection'>
         <Button
         title="Pressione Enter para buscar"
           variant="success"

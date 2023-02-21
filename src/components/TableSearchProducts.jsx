@@ -3,13 +3,13 @@ import dataInfoSearch from '../datafake/dataInfoSearch.json';
 import './tableSearchProducts.css'
 import products from '../datafake/dataProduct.json'
 
-function TableSearchProducts({ productName }) {
-
+function TableSearchProducts({ productName }, event) {
 
   const produtoId = products.find(product => {
     return product.name.toLowerCase() === productName;
   })?.product_id;
   if (!produtoId) {
+    
     return <div style={{ color: 'red' }}>Produto não encontrato.</div>;
     
   } 
