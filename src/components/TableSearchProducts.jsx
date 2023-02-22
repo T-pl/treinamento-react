@@ -33,7 +33,7 @@ function TableSearchProducts({ productName }, event) {
 
   
   return (
-    <Table striped bordered hover>
+    <Table className='tableProduct' striped bordered hover>
       <thead>
         <tr>
           <th className='titleColumn'>DATA E HORA DO PEDIDO</th>

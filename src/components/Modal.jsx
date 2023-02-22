@@ -26,6 +26,7 @@ function ModalSearchProducts(props) {
     setInputValue(event.target.value.toLowerCase());
   }
 
+
   return (
     <Modal
       {...props}
@@ -38,7 +39,7 @@ function ModalSearchProducts(props) {
         <Modal.Title id="contained-modal-title-vcenter">
           <h3>INFORME O PRODUTO</h3>
         </Modal.Title>
-        <CloseButton style={{width: '15px !important', height: '15px !important'}} aria-label="Hide" id='btnClose' onClick={props.onHide}/>
+        <CloseButton style={{width: '15px !important', height: '15px !important'}} aria-label="Fechar Modal" id='btnClose' onClick={props.onHide}/>
         
       </Modal.Header>
       <Modal.Body  >
